@@ -70,9 +70,11 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  python = {
-    analysis = {
-    typeCheckingMode = "off"
+  pyright = {
+    python = {
+      analysis = {
+      typeCheckingMode = "off"
+      }
     }
   },
   -- rust_analyzer = {},
