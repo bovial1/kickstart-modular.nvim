@@ -39,4 +39,16 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- Switch buffer Keymaps
+vim.keymap.set('n', '<C-n>', ':bnext<CR>')
+vim.keymap.set('n', '<C-b>', ':bprevious<CR>')
+vim.keymap.set('n', '<TAB>', ':b#<CR>')
+
+-- Open file in same dir as current file
+vim.cmd('cabbr <expr> %% expand("%:p:h")')
+
+-- Use treesitter for folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+--
 -- vim: ts=2 sts=2 sw=2 et
