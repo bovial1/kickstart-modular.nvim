@@ -47,6 +47,9 @@ vim.keymap.set('n', '<TAB>', ':b#<CR>')
 -- Open file in same dir as current file
 vim.cmd('cabbr <expr> %% expand("%:p:h")')
 
+-- Don't auto fold
+vim.opt.foldenable = false
+
 -- Use treesitter for folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
