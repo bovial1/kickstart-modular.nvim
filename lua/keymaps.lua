@@ -28,12 +28,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- [[ ToggleTerm keymaps ]]
 -- Set it in all windows
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
-vim.keymap.set('t', 'jk', [[<C-\><C-n>]])
+-- vim.keymap.set('t', 'jk', [[<C-\><C-n>]])
 vim.keymap.set({'n', 't'}, '<C-h>', [[<Cmd>wincmd h<CR>]])
 vim.keymap.set({'n', 't'}, '<C-j>', [[<Cmd>wincmd j<CR>]])
 vim.keymap.set({'n', 't'}, '<C-k>', [[<Cmd>wincmd k<CR>]])
 vim.keymap.set({'n', 't'}, '<C-l>', [[<Cmd>wincmd l<CR>]])
-vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]])
+-- vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]])
 
 -- use this to only use in ToggleTerm
 -- function _G.set_terminal_keymaps()
