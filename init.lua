@@ -74,3 +74,10 @@ require('cmp-setup')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- [[ Remember to set this in .bashrc ]]
+-- Map ESC to Caps Lock so VIM is easier to use
+-- For X
+-- setxkbmap -option caps:escape
+-- For Wayland
+-- gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
