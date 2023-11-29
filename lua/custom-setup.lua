@@ -1,18 +1,24 @@
-local diagnostics_active = true
-local toggle_diagnostics = function()
-  diagnostics_active = not diagnostics_active
-  if diagnostics_active then
-    vim.diagnostic.show()
+vim.g.diagnostics_visible = true
+function _G.toggle_diagnostics()
+  if vim.g.diagnostics_visible then
+    vim.g.diagnostics_visible = false
+    vim.diagnostic.disable()
   else
-    vim.diagnostic.hide()
+    vim.g.diagnostics_visible = true
+    vim.diagnostic.enable()
   end
 end
 
-local virtual_text_active = true
-local toggle_diagnostics_virtual_text = function()
-  virtual_text_active = not virtual_text_active
-  vim.diagnostic.config({ virtual_text = virtual_text_active })
+vim.g.diagnostics_virtual_text_visible = true
+function _G.toggle_diagnostics_virtual_text()
+  if vim.g.diagnostics_virtual_text_visible then
+    vim.g.diagnostics_virtual_text_visible = false
+    vim.diagnostic.config({ virtual_text = false})
+  else
+    vim.diagnostic.config({ virtual_text = true })
+    vim.g.diagnostics_virtual_text_visible = true
+  end
 end
 
-vim.keymap.set('n', '<leader>i', toggle_diagnostics, { desc = 'Toggle d[i]agnostic' } )
-vim.keymap.set('n', '<leader>v', toggle_diagnostics_virtual_text, { desc = 'Toggle diagnostic [v]irtual text' } )
+vim.keymap.set({'n'}, '<leader>i', toggle_diagnostics, { desc = 'toggle d[i]agnostics' })
+vim.keymap.set({'n'}, '<leader>I', toggle_diagnostics_virtual_text, { desc = 'toggle d[I]agnostics virtual text' })
