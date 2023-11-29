@@ -22,3 +22,14 @@ end
 
 vim.keymap.set({'n'}, '<leader>i', toggle_diagnostics, { desc = 'Toggle d[i]agnostics' })
 vim.keymap.set({'n'}, '<leader>I', toggle_diagnostics_virtual_text, { desc = 'Toggle d[I]agnostics virtual text' })
+
+-- Disable caps lock while vim is running
+vim.api.nvim_create_autocmd('VimEnter', {
+  pattern = "*",
+  command = "silent !setxkbmap -option caps:escape"
+})
+
+vim.api.nvim_create_autocmd('VimLeave', {
+  pattern = "*",
+  command = "!setxkbmap -option"
+})
