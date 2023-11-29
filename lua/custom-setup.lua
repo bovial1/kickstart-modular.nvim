@@ -20,5 +20,5 @@ function _G.toggle_diagnostics_virtual_text()
   end
 end
 
-vim.keymap.set({'n'}, '<leader>i', toggle_diagnostics, { desc = 'toggle d[i]agnostics' })
-vim.keymap.set({'n'}, '<leader>I', toggle_diagnostics_virtual_text, { desc = 'toggle d[I]agnostics virtual text' })
+vim.keymap.set({'n'}, '<leader>i', toggle_diagnostics, { desc = 'Toggle d[i]agnostics' })
+vim.keymap.set({'n'}, '<leader>I', toggle_diagnostics_virtual_text, { desc = 'Toggle d[I]agnostics virtual text' })
