@@ -2,6 +2,9 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Set the python host program to the nvim venv so that packages can be installed in a single venv (flake8/pynvim/copilotchat requirements etc.)
+vim.g.python3_host_prog = '~/venvs/.nvim-venv/bin/python3'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
